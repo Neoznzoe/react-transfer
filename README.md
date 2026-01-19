@@ -18,14 +18,14 @@ Ce projet permet de mettre en pratique **tous les concepts** des modules 1 et 2.
 │                         TeamHub                                 │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │   Accueil    │  │  Annuaire    │  │   Profil     │          │
-│  │              │  │              │  │              │          │
-│  │ - Dernières  │  │ - Liste      │  │ - Voir       │          │
-│  │   annonces   │  │   employés   │  │ - Modifier   │          │
-│  │ - Poster     │  │ - Recherche  │  │              │          │
-│  │   (si admin) │  │ - Filtres    │  │              │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Accueil    │  │  Annuaire    │  │   Profil     │           │
+│  │              │  │              │  │              │           │
+│  │ - Dernières  │  │ - Liste      │  │ - Voir       │           │
+│  │   annonces   │  │   employés   │  │ - Modifier   │           │
+│  │ - Poster     │  │ - Recherche  │  │              │           │
+│  │   (si admin) │  │ - Filtres    │  │              │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
