@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPLOYEECARD.CSS - Styles de la carte employé
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.employee-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   EN-TÊTE
+   ───────────────────────────────────────────────────────────────────────────── */
+.card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ⚠️ INDICATEUR DE STATUT
+   Position absolue par rapport au conteneur de l'avatar */
+.status-indicator {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* Classes conditionnelles pour le statut */
+.status-indicator.online {
+  background: #10b981; /* Vert */
+}
+
+.status-indicator.offline {
+  background: #9ca3af; /* Gris */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CORPS DE LA CARTE
+   ───────────────────────────────────────────────────────────────────────────── */
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.employee-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+  color: #1f2937;
+}
+
+.employee-role {
+  margin: 0 0 0.5rem 0;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.employee-department {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #e5e7eb;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PIED DE CARTE
+   ───────────────────────────────────────────────────────────────────────────── */
+.card-footer {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.contact-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.phone {
+  color: #6b7280;
+}
+
+.joined-date {
+  color: #9ca3af;
+  font-style: italic;
+}

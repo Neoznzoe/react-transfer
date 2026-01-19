@@ -1,0 +1,47 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYOUT.CSS - Styles du composant Layout
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTENEUR PRINCIPAL
+
+   ⚠️ POINT IMPORTANT : Flexbox pour le layout
+
+   On utilise flex-direction: column pour empiler :
+   - Header en haut
+   - Main au milieu (prend tout l'espace disponible avec flex: 1)
+   - Footer en bas
+
+   min-height: 100vh garantit que le layout prend au moins toute la hauteur
+   de l'écran, même si le contenu est court.
+   ───────────────────────────────────────────────────────────────────────────── */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTENU PRINCIPAL
+
+   flex: 1 fait que ce conteneur prend tout l'espace vertical disponible
+   entre le Header et le Footer.
+   ───────────────────────────────────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}

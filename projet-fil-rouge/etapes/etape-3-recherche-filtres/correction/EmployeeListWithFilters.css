@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPLOYEELISTWITHFILTERS.CSS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.employee-list-section {
+  padding: 1rem 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   EN-TÊTE
+   ───────────────────────────────────────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+.employee-count {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BARRE DE FILTRES
+   ───────────────────────────────────────────────────────────────────────────── */
+.filters-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters-bar .search-bar {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GRILLE DES EMPLOYÉS
+   ───────────────────────────────────────────────────────────────────────────── */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   AUCUN RÉSULTAT
+   ───────────────────────────────────────────────────────────────────────────── */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  color: #6b7280;
+}
+
+.reset-filters-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reset-filters-btn:hover {
+  background: #5a67d8;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .filters-bar {
+    flex-direction: column;
+  }
+
+  .filters-bar .search-bar {
+    min-width: 100%;
+  }
+
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+}

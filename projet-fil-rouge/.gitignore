@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# .GITIGNORE - Fichiers à exclure du dépôt Git
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DÉPENDANCES
+# Le dossier node_modules contient toutes les dépendances installées
+# Il peut peser plusieurs centaines de Mo et se régénère avec npm install
+# ─────────────────────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BUILD / PRODUCTION
+# Fichiers générés par la compilation (npm run build)
+# ─────────────────────────────────────────────────────────────────────────────
+dist/
+build/
+.output/
+.vercel/
+.netlify/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CACHE
+# Fichiers temporaires créés par les outils de développement
+# ─────────────────────────────────────────────────────────────────────────────
+.cache/
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ENVIRONNEMENT
+# ⚠️ IMPORTANT : Ne JAMAIS commiter les fichiers .env avec des secrets !
+# ─────────────────────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LOGS
+# Fichiers de journalisation générés par npm/yarn
+# ─────────────────────────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ÉDITEURS / IDE
+# Fichiers de configuration spécifiques à chaque éditeur
+# ─────────────────────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SYSTÈME D'EXPLOITATION
+# Fichiers cachés créés par macOS et Windows
+# ─────────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TESTS
+# Fichiers générés par les outils de test
+# ─────────────────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DIVERS
+# ─────────────────────────────────────────────────────────────────────────────
+*.local
+*.log
+.temp/
+.tmp/

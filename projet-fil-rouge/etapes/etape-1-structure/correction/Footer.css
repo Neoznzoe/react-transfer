@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER.CSS - Styles du composant Footer
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #1f2937;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-top: auto; /* Pousse le footer en bas */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   LIENS
+   ───────────────────────────────────────────────────────────────────────────── */
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COPYRIGHT
+   ───────────────────────────────────────────────────────────────────────────── */
+.footer-copyright p {
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   VERSION
+   ───────────────────────────────────────────────────────────────────────────── */
+.footer-version {
+  opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

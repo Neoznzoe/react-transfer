@@ -1,0 +1,54 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPLOYEELIST.CSS - Styles de la liste des employés
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.employee-list-section {
+  padding: 1rem 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   EN-TÊTE DE SECTION
+   ───────────────────────────────────────────────────────────────────────────── */
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GRILLE DES CARTES
+
+   ⚠️ POINT IMPORTANT : CSS Grid pour le layout responsive
+
+   - grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+     -> Crée autant de colonnes que possible
+     -> Chaque colonne fait minimum 280px, maximum 1fr
+     -> S'adapte automatiquement à la largeur de l'écran
+   ───────────────────────────────────────────────────────────────────────────── */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ÉTAT VIDE
+   ───────────────────────────────────────────────────────────────────────────── */
+.employee-list-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .employee-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+  }
+}

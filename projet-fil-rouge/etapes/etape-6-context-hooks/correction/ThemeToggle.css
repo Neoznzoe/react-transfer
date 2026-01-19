@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEMETOGGLE.CSS - Styles du bouton de thème
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+/* Thème clair */
+.theme-toggle.light {
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+.theme-toggle.light:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Thème sombre */
+.theme-toggle.dark {
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.theme-toggle.dark:hover {
+  background: #374151;
+  border-color: #6b7280;
+}
+
+.toggle-icon {
+  font-size: 1rem;
+}
+
+.toggle-label {
+  font-weight: 500;
+}
+
+/* Animation de transition */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-toggle:active .toggle-icon {
+  animation: rotate 0.3s ease-out;
+}

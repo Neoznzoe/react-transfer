@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SEARCHBAR.CSS - Styles de la barre de recherche
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ICÔNE
+   ───────────────────────────────────────────────────────────────────────────── */
+.search-icon {
+  margin-right: 0.5rem;
+  opacity: 0.5;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   INPUT
+   ───────────────────────────────────────────────────────────────────────────── */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BOUTON EFFACER
+   ───────────────────────────────────────────────────────────────────────────── */
+.clear-button {
+  background: #e5e7eb;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: background 0.2s ease;
+}
+
+.clear-button:hover {
+  background: #d1d5db;
+}
