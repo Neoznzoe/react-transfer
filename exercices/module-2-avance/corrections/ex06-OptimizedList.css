@@ -1,0 +1,167 @@
+.optimized-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.category-select,
+.sort-select {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+.products-list h2,
+.cart-sidebar h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-category {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #059669;
+  min-width: 70px;
+  text-align: right;
+}
+
+.product-item button {
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.product-item button:hover {
+  background: #2563eb;
+}
+
+.cart-sidebar {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #6b7280;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-item span:first-child {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.cart-item span:nth-child(2) {
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.cart-item .remove-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.cart-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+  text-align: right;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-sidebar {
+    position: static;
+  }
+}

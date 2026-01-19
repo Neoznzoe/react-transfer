@@ -1,0 +1,103 @@
+.status-panel {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-panel h2 {
+  margin: 0 0 1.5rem;
+  color: #1f2937;
+}
+
+.status-panel h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.status-panel section {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.status-panel section:last-child {
+  border-bottom: none;
+}
+
+/* Auth status */
+.auth-status {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.auth-status.logged-in {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.auth-status.logged-out {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.auth-status p {
+  margin: 0 0 0.5rem;
+}
+
+.auth-status button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  min-height: 2rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge.green { background: #d1fae5; color: #065f46; }
+.badge.blue { background: #dbeafe; color: #1e40af; }
+.badge.red { background: #fee2e2; color: #991b1b; }
+
+/* Status */
+.status {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.status.idle { background: #f3f4f6; color: #6b7280; }
+.status.loading { background: #dbeafe; color: #1e40af; }
+.status.success { background: #d1fae5; color: #065f46; }
+.status.error { background: #fee2e2; color: #991b1b; }
+
+.status-panel button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #3b82f6;
+  color: white;
+}
+
+.status-panel button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}

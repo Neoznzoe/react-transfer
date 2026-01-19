@@ -1,0 +1,35 @@
+.carte-visite {
+  max-width: 300px;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carte-visite h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.carte-visite .metier {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.carte-visite .age {
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.carte-visite a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.carte-visite a:hover {
+  text-decoration: underline;
+}

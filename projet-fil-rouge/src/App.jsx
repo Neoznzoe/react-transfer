@@ -8,7 +8,7 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 import { useState } from 'react';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { UserProvider, useUser } from './contexts/UserContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/layout/Layout';
 import EmployeeList from './components/employees/EmployeeList';
@@ -21,14 +21,14 @@ import './styles/index.css';
 // Gère l'affichage en fonction de la page active
 // ═══════════════════════════════════════════════════════════════════════════
 function MainContent({ activePage }) {
-  const { user } = useAuth();
+  const { currentUser } = useUser();
 
   switch (activePage) {
     case 'directory':
       return <EmployeeList />;
 
     case 'profile':
-      return <ProfilePage userId={user?.id || 1} />;
+      return <ProfilePage userId={currentUser?.id || 1} />;
 
     case 'home':
     default:
@@ -63,14 +63,15 @@ function AppContent() {
 //
 // ⚠️ L'ordre des Providers est important :
 // - Les Providers extérieurs sont accessibles aux Providers intérieurs
-// - Ici, ThemeProvider est accessible dans AuthProvider
+// - UserProvider gère l'utilisateur actuellement sélectionné
+// - ThemeProvider gère le thème clair/sombre
 // ═══════════════════════════════════════════════════════════════════════════
 function App() {
   return (
     <ThemeProvider>
-      <AuthProvider>
+      <UserProvider>
         <AppContent />
-      </AuthProvider>
+      </UserProvider>
     </ThemeProvider>
   );
 }

@@ -1,0 +1,45 @@
+.timer {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-family: monospace;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #3b82f6;
+  color: white;
+  transition: background 0.2s;
+}
+
+.control-btn:hover {
+  background: #2563eb;
+}
+
+.control-btn.reset {
+  background: #6b7280;
+}
+
+.control-btn.reset:hover {
+  background: #4b5563;
+}

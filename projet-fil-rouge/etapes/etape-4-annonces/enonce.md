@@ -9,7 +9,7 @@ Créer un système d'annonces avec chargement de données et gestion des états 
 - useEffect pour les effets de bord
 - Simulation d'appel API (fetch)
 - Gestion des états : loading, error, data
-- Formulaire d'ajout (pour les admins)
+- Formulaire d'ajout
 
 ---
 
@@ -34,12 +34,14 @@ La liste qui :
 - Affiche les annonces épinglées en premier
 - Permet de filtrer par catégorie
 
-### 3. Composant `AnnouncementForm.jsx` (Bonus)
+### 3. Composant `AnnouncementForm.jsx`
 
 Un formulaire pour ajouter une annonce :
 - Champs : titre, contenu, catégorie
-- Validation basique
-- Ajout à la liste
+- Validation basique (titre requis, contenu min 10 caractères)
+- Ajout à la liste après soumission
+
+> **Note** : Pour l'instant, tout le monde peut poster une annonce. À l'étape 6, on pourra conditionner l'affichage du formulaire selon le rôle de l'utilisateur sélectionné.
 
 ---
 
@@ -124,6 +126,28 @@ const sortedAnnouncements = [...announcements].sort((a, b) => {
 
 </details>
 
+<details>
+<summary>💡 Ajouter une annonce à la liste</summary>
+
+```jsx
+function handleAddAnnouncement(newAnnouncement) {
+  // Créer l'annonce avec les données manquantes
+  const announcement = {
+    id: Date.now(), // ID temporaire unique
+    ...newAnnouncement,
+    author: "Utilisateur actuel", // À l'étape 6, viendra du contexte
+    authorRole: "Employé",
+    createdAt: new Date().toISOString(),
+    isPinned: false,
+  };
+
+  // Ajouter en début de liste
+  setAnnouncements(prev => [announcement, ...prev]);
+}
+```
+
+</details>
+
 ---
 
 ## Points d'attention
@@ -166,6 +190,20 @@ useEffect(() => {
 }, []);
 ```
 
+### ⚠️ Formater les dates
+
+```jsx
+// Utiliser toLocaleDateString pour un affichage lisible
+const formattedDate = new Date(announcement.createdAt).toLocaleDateString('fr-FR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+});
+// Résultat : "15 janvier 2025 à 10:30"
+```
+
 ---
 
 ## Critères de validation
@@ -175,3 +213,5 @@ useEffect(() => {
 - [ ] Les annonces épinglées apparaissent en premier
 - [ ] Le filtre par catégorie fonctionne
 - [ ] Les dates sont formatées correctement
+- [ ] Le formulaire permet d'ajouter une annonce
+- [ ] La validation empêche les soumissions invalides

@@ -20,7 +20,7 @@ Mettre en place la structure de l'application avec les composants de layout.
 L'en-tête de l'application avec :
 - Logo ou titre "TeamHub"
 - Navigation (Accueil, Annuaire, Profil)
-- Indicateur utilisateur connecté
+- Zone utilisateur (affiche le nom de l'utilisateur actuel - pour l'instant en dur)
 
 ### 2. Composant `Footer.jsx`
 
@@ -96,6 +96,28 @@ const [activePage, setActivePage] = useState('home');
     Accueil
   </button>
 </nav>
+```
+
+</details>
+
+<details>
+<summary>💡 Zone utilisateur simple (pour l'instant)</summary>
+
+```jsx
+// Pour l'instant, on met un utilisateur "en dur"
+// On le rendra dynamique à l'étape 6
+function Header() {
+  const currentUser = { name: "Victor", role: "Développeur" };
+
+  return (
+    <header>
+      {/* ... navigation ... */}
+      <div className="user-zone">
+        <span>{currentUser.name}</span>
+      </div>
+    </header>
+  );
+}
 ```
 
 </details>

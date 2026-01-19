@@ -50,7 +50,7 @@ export const announcements = [
     Merci de votre compréhension.`,
     author: "Victor Besson",
     authorId: 1,
-    authorRole: "Lead Developer",
+    authorRole: "Developer",
     createdAt: "2025-01-13T09:15:00",
     category: "Technique",
     isPinned: false

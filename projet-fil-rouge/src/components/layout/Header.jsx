@@ -1,12 +1,13 @@
 // Composant Header pour le projet fonctionnel
 // Voir etapes/etape-1-structure/correction/Header.jsx pour les explications détaillées
 
-import { useAuth } from '../../contexts/AuthContext';
+import { useUser } from '../../contexts/UserContext';
 import { useTheme } from '../../contexts/ThemeContext';
+import UserSelector from '../ui/UserSelector';
 import './Header.css';
 
 function Header({ activePage, onNavigate }) {
-  const { user } = useAuth();
+  const { currentUser, isAdmin } = useUser();
   const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
@@ -35,14 +36,20 @@ function Header({ activePage, onNavigate }) {
       </nav>
 
       <div className="header-actions">
-        <button onClick={toggleTheme} className="theme-toggle">
+        <button onClick={toggleTheme} className="theme-toggle" title="Changer de thème">
           {theme === 'dark' ? '☀️' : '🌙'}
         </button>
 
-        {user && (
+        {/* Sélecteur d'utilisateur en version compacte */}
+        <UserSelector compact />
+
+        {currentUser && (
           <div className="header-user">
-            <img src={user.avatar} alt={user.firstName} className="user-avatar" />
-            <span className="user-name">{user.firstName}</span>
+            <img src={currentUser.avatar} alt={currentUser.firstName} className="user-avatar" />
+            <div className="user-info">
+              <span className="user-name">{currentUser.firstName}</span>
+              {isAdmin && <span className="admin-indicator">Admin</span>}
+            </div>
           </div>
         )}
       </div>

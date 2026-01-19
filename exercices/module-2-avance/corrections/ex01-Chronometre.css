@@ -1,0 +1,51 @@
+.chronometre {
+  text-align: center;
+  padding: 2rem;
+  background: #1f2937;
+  border-radius: 12px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.chrono-display {
+  font-size: 3rem;
+  font-family: 'Courier New', monospace;
+  color: #10b981;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.chrono-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.chrono-controls button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.1s;
+}
+
+.chrono-controls button:active {
+  transform: scale(0.95);
+}
+
+.btn-start {
+  background: #10b981;
+  color: white;
+}
+
+.btn-stop {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-reset {
+  background: #6b7280;
+  color: white;
+}

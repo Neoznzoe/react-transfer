@@ -12,6 +12,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=1",
     phone: "01 23 45 67 89",
     isOnline: true,
+    isAdmin: true,  // Peut poster des annonces
     joinedAt: "2022-03-15",
     bio: "Passionné par React et les technologies web modernes."
   },
@@ -25,6 +26,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=5",
     phone: "01 23 45 67 90",
     isOnline: false,
+    isAdmin: false,
     joinedAt: "2023-01-10",
     bio: "Créatrice d'expériences utilisateur intuitives."
   },
@@ -38,6 +40,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=3",
     phone: "01 23 45 67 91",
     isOnline: true,
+    isAdmin: false,
     joinedAt: "2021-06-20",
     bio: "Expert en stratégies digitales et growth hacking."
   },
@@ -51,6 +54,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=9",
     phone: "01 23 45 67 92",
     isOnline: true,
+    isAdmin: true,  // DRH peut poster des annonces
     joinedAt: "2020-02-01",
     bio: "Accompagner les talents pour une entreprise épanouissante."
   },
@@ -64,6 +68,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=8",
     phone: "01 23 45 67 93",
     isOnline: false,
+    isAdmin: false,
     joinedAt: "2023-05-15",
     bio: "Spécialiste Node.js et bases de données."
   },
@@ -77,6 +82,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=10",
     phone: "01 23 45 67 94",
     isOnline: true,
+    isAdmin: false,
     joinedAt: "2024-01-08",
     bio: "Passionnée par le design system et l'accessibilité."
   },
@@ -90,6 +96,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=11",
     phone: "01 23 45 67 95",
     isOnline: true,
+    isAdmin: true,  // CEO peut poster des annonces
     joinedAt: "2019-01-01",
     bio: "Visionnaire et passionné par l'innovation."
   },
@@ -103,6 +110,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=20",
     phone: "01 23 45 67 96",
     isOnline: false,
+    isAdmin: false,
     joinedAt: "2022-09-01",
     bio: "Créatrice de contenus engageants et stratégiques."
   }
@@ -126,4 +134,9 @@ export function getEmployeeById(id) {
 export function getEmployeesByDepartment(department) {
   if (department === "Tous") return employees;
   return employees.filter(emp => emp.department === department);
+}
+
+// Fonction utilitaire pour obtenir les admins
+export function getAdmins() {
+  return employees.filter(emp => emp.isAdmin);
 }

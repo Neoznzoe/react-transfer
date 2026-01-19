@@ -1,0 +1,118 @@
+.theme-container {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Thème clair */
+.theme-container.light {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.theme-container.light .theme-card {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-container.light .demo-box {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Thème sombre */
+.theme-container.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.theme-container.dark .theme-card {
+  background: #1f2937;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-container.dark .demo-box {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+/* Carte principale */
+.theme-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.theme-card h2 {
+  margin: 0 0 1rem;
+}
+
+.theme-card p {
+  margin: 0 0 1.5rem;
+}
+
+/* Bouton */
+.theme-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.theme-btn:active {
+  transform: scale(0.98);
+}
+
+.btn-dark {
+  background: #1f2937;
+  color: white;
+}
+
+.btn-dark:hover {
+  background: #111827;
+}
+
+.btn-light {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.btn-light:hover {
+  background: #e5e7eb;
+}
+
+/* Contenu démo */
+.demo-content {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid currentColor;
+  opacity: 0.8;
+}
+
+.demo-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.demo-content p {
+  font-size: 0.875rem;
+}
+
+.demo-boxes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.demo-box {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.875rem;
+  transition: background-color 0.3s, color 0.3s;
+}

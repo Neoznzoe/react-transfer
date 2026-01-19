@@ -6,6 +6,7 @@ TeamHub est un mini intranet d'entreprise qui permet de :
 - Consulter l'annuaire des employés
 - Lire et poster des annonces internes
 - Gérer son profil utilisateur
+- Basculer entre thème clair/sombre
 
 Ce projet permet de mettre en pratique **tous les concepts** des modules 1 et 2.
 
@@ -27,8 +28,23 @@ Ce projet permet de mettre en pratique **tous les concepts** des modules 1 et 2.
 │  │   (si admin) │  │ - Filtres    │  │              │          │
 │  └──────────────┘  └──────────────┘  └──────────────┘          │
 │                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │  Sélecteur d'utilisateur : Choisir "qui je suis"        │   │
+│  │  (Simulation d'authentification pour la démo)           │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## Approche pédagogique
+
+> **Pas de vrai système login/register**
+>
+> Un vrai système d'authentification (login, mot de passe, JWT, sessions) est complexe et hors scope pour cette formation React.
+>
+> À la place, on utilise un **sélecteur d'utilisateur** (dropdown) qui permet de simuler différents utilisateurs et rôles. On apprend les mêmes concepts (Context, état global) sans la complexité backend.
 
 ---
 
@@ -79,7 +95,7 @@ Le projet est découpé en **6 étapes**, chacune correspondant à des concepts 
 **À créer** :
 - `AnnouncementList.jsx` : liste des annonces
 - `AnnouncementCard.jsx` : une annonce
-- `AnnouncementForm.jsx` : formulaire d'ajout (admin)
+- `AnnouncementForm.jsx` : formulaire d'ajout
 
 ---
 
@@ -96,12 +112,13 @@ Le projet est découpé en **6 étapes**, chacune correspondant à des concepts 
 
 ### Étape 6 : Finalisation (Module 2)
 
-**Concepts** : Context API, Custom Hooks, Optimisation
+**Concepts** : Context API, Custom Hooks, Persistance localStorage
 
 **À créer** :
-- `AuthContext.jsx` : contexte d'authentification
+- `UserContext.jsx` : contexte utilisateur (sélecteur)
+- `UserSelector.jsx` : dropdown pour choisir l'utilisateur
 - `useLocalStorage.jsx` : hook personnalisé
-- Thème clair/sombre
+- `ThemeContext.jsx` : thème clair/sombre
 
 ---
 
@@ -138,9 +155,10 @@ projet-fil-rouge/
 │   │   └── ui/
 │   │       ├── Button.jsx
 │   │       ├── Card.jsx
-│   │       └── Modal.jsx
+│   │       └── UserSelector.jsx
 │   ├── contexts/
-│   │   └── AuthContext.jsx
+│   │   ├── UserContext.jsx
+│   │   └── ThemeContext.jsx
 │   ├── hooks/
 │   │   └── useLocalStorage.js
 │   ├── data/
@@ -171,6 +189,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=1",
     phone: "01 23 45 67 89",
     isOnline: true,
+    isAdmin: true,  // Peut poster des annonces
     joinedAt: "2022-03-15"
   },
   {
@@ -183,6 +202,7 @@ export const employees = [
     avatar: "https://i.pravatar.cc/150?img=5",
     phone: "01 23 45 67 90",
     isOnline: false,
+    isAdmin: false,  // Employé standard
     joinedAt: "2023-01-10"
   },
   // ... autres employés
@@ -206,7 +226,7 @@ export const announcements = [
     title: "Bienvenue sur TeamHub !",
     content: "Notre nouvel intranet est maintenant disponible...",
     author: "Victor Besson",
-    authorRole: "Admin",
+    authorRole: "Lead Developer",
     createdAt: "2025-01-15T10:30:00",
     category: "Général",
     isPinned: true
@@ -233,9 +253,9 @@ export const categories = [
 | 1 | Layout responsive, navigation fonctionnelle |
 | 2 | Toutes les cartes s'affichent, statut visible |
 | 3 | Recherche temps réel, filtres combinables |
-| 4 | Chargement affiché, erreurs gérées |
+| 4 | Chargement affiché, erreurs gérées, formulaire ajout |
 | 5 | Formulaire valide, données persistées |
-| 6 | Thème toggle, état global fonctionnel |
+| 6 | Sélecteur utilisateur, thème toggle, état global |
 
 ### Globaux
 
@@ -243,3 +263,15 @@ export const categories = [
 - [ ] Code propre et commenté
 - [ ] Composants réutilisables
 - [ ] Responsive (mobile-first)
+
+---
+
+## Pour démarrer
+
+```bash
+# Dans le dossier projet-fil-rouge
+npm install
+npm run dev
+```
+
+Puis ouvrir [http://localhost:5173](http://localhost:5173)

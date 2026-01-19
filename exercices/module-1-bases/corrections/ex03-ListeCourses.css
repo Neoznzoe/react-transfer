@@ -1,0 +1,61 @@
+.liste-courses {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.liste-courses h2 {
+  margin: 0 0 1rem;
+  color: #1f2937;
+}
+
+.liste-courses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-courses li {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 1rem;
+}
+
+.liste-courses li:last-child {
+  border-bottom: none;
+}
+
+.liste-courses li.achete {
+  opacity: 0.5;
+}
+
+.liste-courses li.achete .nom {
+  text-decoration: line-through;
+}
+
+.liste-courses .nom {
+  flex: 1;
+}
+
+.liste-courses .quantite {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.liste-courses .check {
+  color: #10b981;
+  font-weight: bold;
+}
+
+.liste-courses .total {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
